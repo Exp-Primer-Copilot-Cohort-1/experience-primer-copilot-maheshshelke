@@ -1,6 +1,8 @@
 
-// Create web server application with express module and set port number to 3000 and start the server
+// Create web server
 const express = require('express');
 const app = express();
-const port = 3000;
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.listen(3000, () => console.log('Listening at 3000'));
